@@ -1,16 +1,15 @@
 import Image from "next/image";
 
 type CardsProps ={
-    id: number;
     country: string;
     capital: string;
     region: string;
     population: string;
 }
 
-const Card = ({id, country, capital, region, population}: CardsProps) => {
+const Card = ({ country, capital, region, population}: CardsProps) => {
     return (
-        <div id={`${id}`} className=" h-full overflow-hidden bg-white rounded-lg shadow-lg">
+        <div className=" h-full overflow-hidden bg-white rounded-lg shadow-lg">
             <div className="aspect-video w-full">
                 <Image
                     src="https://via.placeholder.com/600x400"

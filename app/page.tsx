@@ -1,5 +1,5 @@
 
-import { Card, Footer, Header } from "./components"
+import { Card, Footer, Header, Grid } from "./components"
 
 export default function Home() {
     const Countries = [
@@ -47,48 +47,30 @@ export default function Home() {
         }
     ];
 
-
     return (
         <>
             <Header />
             <main className="flex-1">
-                <Card
-                    id={Countries[0].id}
-                    country={Countries[0].country}
-                    capital={Countries[0].capital}
-                    region={Countries[0].region}
-                    population={Countries[0].population} />
-                <Card
-                    id={Countries[1].id}
-                    country={Countries[1].country}
-                    capital={Countries[1].capital}
-                    region={Countries[1].region}
-                    population={Countries[1].population} />
-                <Card
-                    id={Countries[2].id}
-                    country={Countries[2].country}
-                    capital={Countries[2].capital}
-                    region={Countries[2].region}
-                    population={Countries[2].population} />
-                <Card
-                    id={Countries[3].id}
-                    country={Countries[3].country}
-                    capital={Countries[3].capital}
-                    region={Countries[3].region}
-                    population={Countries[3].population} />
-                <Card
-                    id={Countries[4].id}
-                    country={Countries[4].country}
-                    capital={Countries[4].capital}
-                    region={Countries[4].region}
-                    population={Countries[4].population} />
-                <Card
-                    id={Countries[5].id}
-                    country={Countries[5].country}
-                    capital={Countries[5].capital}
-                    region={Countries[5].region}
-                    population={Countries[5].population} />
-
+                {/* {Countries.map((country) =>
+                    <Card
+                        key={country.id}
+                        country={country.country}
+                        capital={country.capital}
+                        region={country.region}
+                        population={country.population}
+                    />
+                )} */}
+                <Grid>
+                    {Countries.map(({ id, country, capital, region, population }) =>
+                        <Card
+                            key={id}
+                            country={country}
+                            capital={capital}
+                            region={region}
+                            population={population}
+                        />
+                    )}
+                </Grid>
             </main>
             <Footer />
         </>
